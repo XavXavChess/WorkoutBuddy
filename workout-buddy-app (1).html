@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Buddy - Fitness Tracker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #ff6584;
+            --success: #2ecc71;
+            --dark: #343a40;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            background-color: #f7f7ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary) !important;
+        }
+        
+        .buddy-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .buddy-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .buddy-image {
+            max-width: 150px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .level-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+        
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border: none;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+            padding: 15px;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 8px;
+            padding: 8px 20px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #5652db;
+        }
+        
+        .streak-counter {
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 0 auto;
+        }
+        
+        .workout-log {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .form-guide {
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+        
+        .tab-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: white;
+            color: var(--primary);
+            font-weight: bold;
+            border-top: 3px solid var(--primary);
+            border-bottom: none;
+        }
+        
+        .nav-tabs .nav-link {
+            color: var(--dark);
+        }
+        
+        #settings .form-check {
+            margin-bottom: 15px;
+        }
+        
+        .quote-container {
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .exercise-form-video {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .workout-history-item {
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .buddy-evolution-track {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .evolution-stage {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .evolution-stage::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 100%;
+            height: 3px;
+            background-color: #ddd;
+            z-index: -1;
+        }
+
+        .evolution-stage:last-child::after {
+            display: none;
+        }
+
+        .evolution-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            border: 2px solid #ddd;
+            font-size: 24px;
+        }
+
+        .evolution-complete .evolution-icon {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .evolution-current .evolution-icon {
+            background-color: white;
+            border-color: var(--primary);
+            border-width: 3px;
+            color: var(--primary);
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-header {
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calendar-day.workout-day {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .donut-chart-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .donut-chart {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--primary) 0% 30%, 
+                var(--secondary) 30% 55%, 
+                var(--success) 55% 75%,
+                #f8f9fa 75% 100%
+            );
+        }
+
+        .donut-hole {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background-color: white;
+            border-radius: 50%;
+            top: 20%;
+            left: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">🐶 Workout Buddy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-bs-toggle="tab">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#workout" data-bs-toggle="tab">Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#progress" data-bs-toggle="tab">Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#guides" data-bs-toggle="tab">Form Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings" data-bs-toggle="tab">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="tab-content">
+            <!-- Home Tab -->
+            <div class="tab-pane fade show active" id="home">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="buddy-container text-center">
+                            <span class="level-badge">Level 3</span>
+                            <img src="/api/placeholder/300/300" alt="Your workout buddy" class="buddy-image mb-3">
+                            <h3>Rocky</h3>
+                            <p>Your loyal workout buddy is getting stronger with you!</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="small text-muted">65% to next evolution</p>
+                            <div class="quote-container">
+                                "Great job on your consistency! Ready for today's workout?"
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Recent Activity</div>
+                            <div class="card-body workout-log">
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 12, 2025</strong> - Back & Biceps</p>
+                                    <p class="text-muted small mb-0">Completed 5 exercises • 45 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 11, 2025</strong> - Chest & Triceps</p>
+                                    <p class="text-muted small mb-0">Completed 6 exercises • 55 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 10, 2025</strong> - Legs</p>
+                                    <p class="text-muted small mb-0">Completed 4 exercises • 40 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 9, 2025</strong> - Shoulders</p>
+                                    <p class="text-muted small mb-0">Completed 5 exercises • 50 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span>Current Streak</span>
+                                <span class="badge bg-success">⚡ Active</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="streak-counter mb-3">4</div>
+                                <p>Keep it going! You've worked out 4 days in a row.</p>
+                                <button class="btn btn-primary" id="log-workout-btn">Log Today's Workout</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">Upcoming Workout</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Legs Day</h5>
+                                <p class="card-text">Based on your schedule, today is legs day.</p>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Squats
+                                        <span class="badge bg-primary rounded-pill">3 × 12</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Lunges
+                                        <span class="badge bg-primary rounded-pill">3 × 10</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Leg Press
+                                        <span class="badge bg-primary rounded-pill">3 × 15</span>
+                                    </li>
+                                </ul>
+                                <a href="#workout" class="btn btn-outline-primary w-100" data-bs-toggle="tab">Start Workout</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">Form Tip of the Day</div>
+                            <div class="card-body">
+                                <h5>Proper Squat Form</h5>
+                                <p>Keep your feet shoulder-width apart and your back straight. Lower your body as if sitting in a chair.</p>
+                                <a href="#guides" class="btn btn-sm btn-outline-primary" data-bs-toggle="tab">View Full Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workout Tab -->
+            <div class="tab-pane fade" id="workout">
+                <div class="row">
+                    <div class="
