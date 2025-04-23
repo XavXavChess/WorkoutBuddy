@@ -1,0 +1,294 @@
+:root {
+    --primary: #6c63ff;
+    --secondary: #ff6584;
+    --success: #2ecc71;
+    --dark: #343a40;
+    --light: #f8f9fa;
+}
+
+body {
+    background-color: #f7f7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary) !important;
+}
+
+.buddy-container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.buddy-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.buddy-image {
+    max-width: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
+.level-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    border: none;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 8px;
+    padding: 8px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #5652db;
+}
+
+.streak-counter {
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+.workout-log {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.form-guide {
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    margin: 15px 0;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: white;
+    color: var(--primary);
+    font-weight: bold;
+    border-top: 3px solid var(--primary);
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    color: var(--dark);
+}
+
+#settings .form-check {
+    margin-bottom: 15px;
+}
+
+.quote-container {
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(108, 99, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.exercise-form-video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.workout-history-item {
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.buddy-evolution-track {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.evolution-stage {
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.evolution-stage::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background-color: #ddd;
+    z-index: -1;
+}
+
+.evolution-stage:last-child::after {
+    display: none;
+}
+
+.evolution-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    border: 2px solid #ddd;
+    font-size: 24px;
+}
+
+.evolution-complete .evolution-icon {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.evolution-current .evolution-icon {
+    background-color: white;
+    border-color: var(--primary);
+    border-width: 3px;
+    color: var(--primary);
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-day.workout-day {
+    background-color: var(--primary);
+    color: white;
+}
+
+.donut-chart-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.donut-chart {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary) 0% 30%, 
+        var(--secondary) 30% 55%, 
+        var(--success) 55% 75%,
+        #f8f9fa 75% 100%
+    );
+}
+
+.donut-hole {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 5px;
+}

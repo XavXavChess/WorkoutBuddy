@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Buddy - Fitness Tracker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">🐶 Workout Buddy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-bs-toggle="tab">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#workout" data-bs-toggle="tab">Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#progress" data-bs-toggle="tab">Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#guides" data-bs-toggle="tab">Form Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings" data-bs-toggle="tab">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="tab-content">
+            <!-- Home Tab -->
+            <div class="tab-pane fade show active" id="home">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="buddy-container text-center">
+                            <span class="level-badge">Level 3</span>
+                            <img src="/api/placeholder/300/300" alt="Your workout buddy" class="buddy-image mb-3">
+                            <h3>Rocky</h3>
+                            <p>Your loyal workout buddy is getting stronger with you!</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="small text-muted">65% to next evolution</p>
+                            <div class="quote-container">
+                                "Great job on your consistency! Ready for today's workout?"
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">Recent Activity</div>
+                            <div class="card-body workout-log">
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 12, 2025</strong> - Back & Biceps</p>
+                                    <p class="text-muted small mb-0">Completed 5 exercises • 45 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 11, 2025</strong> - Chest & Triceps</p>
+                                    <p class="text-muted small mb-0">Completed 6 exercises • 55 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 10, 2025</strong> - Legs</p>
+                                    <p class="text-muted small mb-0">Completed 4 exercises • 40 minutes</p>
+                                </div>
+                                <div class="workout-history-item">
+                                    <p class="mb-1"><strong>March 9, 2025</strong> - Shoulders</p>
+                                    <p class="text-muted small mb-0">Completed 5 exercises • 50 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span>Current Streak</span>
+                                <span class="badge bg-success">⚡ Active</span>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="streak-counter mb-3">4</div>
+                                <p>Keep it going! You've worked out 4 days in a row.</p>
+                                <button class="btn btn-primary" id="log-workout-btn">Log Today's Workout</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">Upcoming Workout</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Legs Day</h5>
+                                <p class="card-text">Based on your schedule, today is legs day.</p>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Squats
+                                        <span class="badge bg-primary rounded-pill">3 × 12</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Lunges
+                                        <span class="badge bg-primary rounded-pill">3 × 10</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Leg Press
+                                        <span class="badge bg-primary rounded-pill">3 × 15</span>
+                                    </li>
+                                </ul>
+                                <a href="#workout" class="btn btn-outline-primary w-100" data-bs-toggle="tab">Start Workout</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">Form Tip of the Day</div>
+                            <div class="card-body">
+                                <h5>Proper Squat Form</h5>
+                                <p>Keep your feet shoulder-width apart and your back straight. Lower your body as if sitting in a chair.</p>
+                                <a href="#guides" class="btn btn-sm btn-outline-primary" data-bs-toggle="tab">View Full Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
