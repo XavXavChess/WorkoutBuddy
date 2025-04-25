@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Buddy - Form Guides</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="formStyle" rel="stylesheet>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🐶 Workout Buddy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workout.html">Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progress.html">Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="guides.html">Form Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0">Exercise Form Guides</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-filter me-2"></i> Filter
+                    </button>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search exercises..." class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">Exercise Categories</div>
+                    <div class="card-body">
+                        <div class="exercise-tab active" data-target="squat">
+                            <i class="fas fa-dumbbell me-2"></i> Squat
+                        </div>
+                        <div class="exercise-tab" data-target="deadlift">
+                            <i class="fas fa-dumbbell me-2"></i> Deadlift
+                        </div>
+                        <div class="exercise-tab" data-target="bench-press">
+                            <i class="fas fa-dumbbell me-2"></i> Bench Press
+                        </div>
+                        <div class="exercise-tab" data-target="pull-up">
+                            <i class="fas fa-dumbbell me-2"></i> Pull-Up
+                        </div>
+                        <div class="exercise-tab" data-target="plank">
+                            <i class="fas fa-dumbbell me-2"></i> Plank
+                        </div>
+                        <hr>
+                        <h6>Exercise Type</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="compound" checked>
+                            <label class="form-check-label" for="compound">Compound</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="isolation" checked>
+                            <label class="form-check-label" for="isolation">Isolation</label>
+                        </div>
+                        <hr>
+                        <h6>Equipment</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="barbell" checked>
+                            <label class="form-check-label" for="barbell">Barbell</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="dumbbell" checked>
+                            <label class="form-check-label" for="dumbbell">Dumbbell</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="bodyweight" checked>
+                            <label class="form-check-label" for="bodyweight">Bodyweight</label>
+                        </div>
+                        <hr>
+                        <h6>Difficulty</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="beginner" checked>
+                            <label class="form-check-label" for="beginner">Beginner</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="intermediate" checked>
+                            <label class="form-check-label" for="intermediate">Intermediate</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="advanced" checked>
+                            <label class="form-check-label" for="advanced">Advanced</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Recently Viewed</div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="flex-shrink-0">
+                                <div class="image-placeholder" style="width: 50px; height: 50px; min-height: auto; margin-bottom: 0;">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-0">Bench Press</h6>
+                                <small class="text-muted">Chest, Triceps</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="flex-shrink-0">
+                                <div class="image-placeholder" style="width: 50px; height: 50px; min-height: auto; margin-bottom: 0;">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-0">Pull-Up</h6>
+                                <small class="text-muted">Back, Biceps</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="image-placeholder" style="width: 50px; height: 50px; min-height: auto; margin-bottom: 0;">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-0">Squat</h6>
+                                <small class="text-muted">Legs, Core</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="exercise-content active" id="squat">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-4">
+                                <div>
+                                    <h3>Barbell Squat</h3>
+                                    <div>
+                                        <span class="category-tag">Compound</span>
+                                        <span class="category-tag">Legs</span>
+                                        <span class="category-tag">Barbell</span>
+                                    </div>
+                                </div>
+                                <button class="favorite-btn">
+                                    <i class="far fa-star"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="image-placeholder">
+                                        <div>
+                                            <i class="fas fa-image fa-2x mb-2"></i><br>
+                                            Starting Position<br>
+                                            <small>(Image Placeholder)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="image-placeholder">
+                                        <div>
+                                            <i class="fas fa-image fa-2x mb-2"></i><br>
+                                            Bottom Position<br>
+                                            <small>(Image Placeholder)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tips-section mb-4">
+                                <h5><i class="fas fa-lightbulb me-2"></i>Quick Tips</h5>
+                                <ul class="mb-0">
+                                    <li>Keep your chest up and back straight throughout the movement</li>
+                                    <li>Push through your heels, not your toes</li>
+                                    <li>Knees should track in line with your toes</li>
+                                    <li>Aim for at least parallel depth (thighs parallel to ground)</li>
+                                    <li>Breathe in before descending, brace your core, and exhale on the way up</li>
+                                </ul>
+                            </div>
+                            
+                            <h4 class="mb-3">Proper Form Guide</h4>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">1</div>
+                                <div class="form-step-content">
+                                    <h5>Setup</h5>
+                                    <p>Position the barbell on a rack at approximately shoulder height. Step under the bar so that it rests on your upper back across your traps (not on your neck). Grip the bar with hands slightly wider than shoulder-width. Unrack the bar by straightening your legs and step back from the rack.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">2</div>
+                                <div class="form-step-content">
+                                    <h5>Starting Position</h5>
+                                    <p>Stand with feet shoulder-width apart or slightly wider, toes pointed slightly outward. Keep your chest up, back straight, and core tight. Fix your gaze at a point on the wall slightly above eye level to maintain a neutral spine position.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">3</div>
+                                <div class="form-step-content">
+                                    <h5>Descent</h5>
+                                    <p>Initiate the movement by bending at the hips and knees simultaneously, as if sitting back into a chair. Keep your knees tracking over your toes (not caving inward). Maintain the natural arch in your lower back as you descend until your thighs are at least parallel to the ground.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">4</div>
+                                <div class="form-step-content">
+                                    <h5>Bottom Position</h5>
+                                    <p>At the bottom of the squat, your knees should be bent at approximately 90 degrees. Your weight should be distributed through your heels and midfoot, not shifted forward to your toes. Keep your chest up and core tight.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">5</div>
+                                <div class="form-step-content">
+                                    <h5>Ascent</h5>
+                                    <p>Drive through your heels to push yourself back up, extending your hips and knees simultaneously. Keep your back straight and chest up throughout the movement. Continue until your legs are fully extended, returning to the starting position.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="common-mistakes mt-4">
+                                <h5><i class="fas fa-exclamation-triangle me-2"></i>Common Mistakes</h5>
+                                <ul>
+                                    <li><strong>Knees caving inward</strong> - Ensure knees track in line with toes by focusing on pushing knees outward during the movement.</li>
+                                    <li><strong>Rising onto toes</strong> - Keep weight in heels and midfoot; you should be able to wiggle your toes at the bottom of the squat.</li>
+                                    <li><strong>Rounding the back</strong> - Maintain a neutral spine position by keeping chest up and core engaged.</li>
+                                    <li><strong>Not reaching proper depth</strong> - Aim to get thighs at least parallel to the ground for full muscle engagement.</li>
+                                    <li><strong>Letting the bar path drift forward</strong> - The bar should travel in a vertical line over mid-foot throughout the movement.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5>Muscles Worked</h5>
+                                    <div class="muscle-diagram">
+                                        <div class="text-center">
+                                            <i class="fas fa-male fa-3x mb-2"></i><br>
+                                            <small>(Muscle Diagram Placeholder)</small>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li><strong>Primary:</strong> Quadriceps, Glutes</li>
+                                        <li><strong>Secondary:</strong> Hamstrings, Lower Back, Core</li>
+                                        <li><strong>Tertiary:</strong> Calves, Upper Back</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Variations</h5>
+                                    <ul>
+                                        <li><strong>Front Squat</strong> - Places more emphasis on quadriceps.</li>
+                                        <li><strong>Goblet Squat</strong> - Great for beginners to learn proper form.</li>
+                                        <li><strong>Bulgarian Split Squat</strong> - Single-leg variation for balance and unilateral strength.</li>
+                                        <li><strong>Overhead Squat</strong> - Advanced variation that increases shoulder and core engagement.</li>
+                                        <li><strong>Box Squat</strong> - Helps develop power from the bottom position.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5>Programming Recommendations</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Goal</th>
+                                                <th>Sets</th>
+                                                <th>Reps</th>
+                                                <th>Rest</th>
+                                                <th>Frequency</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Strength</td>
+                                                <td>3-5</td>
+                                                <td>3-6</td>
+                                                <td>2-3 min</td>
+                                                <td>1-2x/week</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hypertrophy</td>
+                                                <td>3-4</td>
+                                                <td>8-12</td>
+                                                <td>1-2 min</td>
+                                                <td>1-2x/week</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Endurance</td>
+                                                <td>2-3</td>
+                                                <td>15-20</td>
+                                                <td>30-60 sec</td>
+                                                <td>1-2x/week</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-content" id="deadlift">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-4">
+                                <div>
+                                    <h3>Conventional Deadlift</h3>
+                                    <div>
+                                        <span class="category-tag">Compound</span>
+                                        <span class="category-tag">Back</span>
+                                        <span class="category-tag">Legs</span>
+                                        <span class="category-tag">Barbell</span>
+                                    </div>
+                                </div>
+                                <button class="favorite-btn">
+                                    <i class="far fa-star"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="image-placeholder">
+                                        <div>
+                                            <i class="fas fa-image fa-2x mb-2"></i><br>
+                                            Starting Position<br>
+                                            <small>(Image Placeholder)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="image-placeholder">
+                                        <div>
+                                            <i class="fas fa-image fa-2x mb-2"></i><br>
+                                            Lockout Position<br>
+                                            <small>(Image Placeholder)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tips-section mb-4">
+                                <h5><i class="fas fa-lightbulb me-2"></i>Quick Tips</h5>
+                                <ul class="mb-0">
+                                    <li>Keep the bar close to your body throughout the movement</li>
+                                    <li>Maintain a neutral spine position from setup to lockout</li>
+                                    <li>Drive through your heels and push the floor away</li>
+                                    <li>Engage your lats by thinking about "protecting your armpits"</li>
+                                    <li>Breathe and brace before initiating the lift</li>
+                                </ul>
+                            </div>
+                            
+                            <h4 class="mb-3">Proper Form Guide</h4>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">1</div>
+                                <div class="form-step-content">
+                                    <h5>Setup</h5>
+                                    <p>Position yourself with the barbell over your mid-foot. Your feet should be hip-width apart, with toes pointing slightly outward. The barbell should be about 1 inch from your shins.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">2</div>
+                                <div class="form-step-content">
+                                    <h5>Grip</h5>
+                                    <p>Bend at the hips to reach down and grip the bar just outside your legs. You can use either a double overhand grip (both palms facing you) or a mixed grip (one palm facing you, one facing away) for heavier weights. Your arms should be straight, acting as ropes that connect your shoulders to the bar.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">3</div>
+                                <div class="form-step-content">
+                                    <h5>Starting Position</h5>
+                                    <p>Lower your hips and raise your chest to create tension in your body. Your shoulders should be slightly in front of the bar, with your back flat (neutral spine). Engage your lats by pulling your shoulders back and down. Take a deep breath, brace your core, and prepare to lift.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">4</div>
+                                <div class="form-step-content">
+                                    <h5>The Pull</h5>
+                                    <p>Initiate the pull by pushing through your heels and driving your hips forward. The bar should travel in a straight vertical path, staying close to your body throughout the movement. Your knees and hips should extend simultaneously.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">5</div>
+                                <div class="form-step-content">
+                                    <h5>Lockout</h5>
+                                    <p>At the top of the movement, stand tall with your shoulders back, chest up, and hips fully extended. Do not hyperextend your lower back. Hold this position briefly to complete the lift.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-step">
+                                <div class="form-step-number">6</div>
+                                <div class="form-step-content">
+                                    <h5>Lowering the Weight</h5>
+                                    <p>To lower the weight, hinge at the hips first, then bend your knees once the bar passes them. Keep the bar close to your body and maintain control throughout the descent until the weight returns to the floor.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="common-mistakes mt-4">
+                                <h5><i class="fas fa-exclamation-triangle me-2"></i>Common Mistakes</h5>
+                                <ul>
+                                    <li><strong>Rounding the back</strong> - Maintain a neutral spine throughout the lift to prevent injury.</li>
+                                    <li><strong>Starting with hips too low</strong> - This turns the movement into a squat pattern rather than a hip hinge.</li>
+                                    <li><strong>Allowing the bar to drift away from the body</strong> - Keep the bar close to your shins and thighs throughout the movement.</li>
+                                    <li><strong>Jerking the weight off the floor</strong> - Develop tension before lifting and pull the weight smoothly.</li>
+                                    <li><strong>Hyperextending at the top</strong> - Simply stand tall with hips fully extended; don't lean back excessively.</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Rest of the deadlift content would be here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content for other exercises would be here -->
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple tab functionality
+        document.querySelectorAll('.exercise-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.exercise-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all content
+                document.querySelectorAll('.exercise-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show corresponding content
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+        
+        // Favorite button functionality
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = this.innerHTML.includes('far') ? 
+                    '<i class="fas fa-star"></i>' : 
+                    '<i class="far fa-star"></i>';
+            });
+        });
+    </script>
+</body>
